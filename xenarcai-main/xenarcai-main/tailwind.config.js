@@ -1,0 +1,126 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#e6f1fe',
+          100: '#cce3fd',
+          200: '#99c7fb',
+          300: '#66abf9',
+          400: '#338ff7',
+          500: '#0073f5',
+          600: '#005cc4',
+          700: '#004593',
+          800: '#002e62',
+          900: '#001731',
+          950: '#000c19',
+        },
+        secondary: {
+          50: '#f0f0ff',
+          100: '#e1e1ff',
+          200: '#c3c3ff',
+          300: '#a5a5ff',
+          400: '#8787ff',
+          500: '#6969ff',
+          600: '#5454cc',
+          700: '#3f3f99',
+          800: '#2a2a66',
+          900: '#151533',
+          950: '#0a0a1a',
+        },
+        dark: {
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
+          950: '#030712',
+        },
+        xai: {
+          black: '#000000',
+          darkgray: '#0a0a0a',
+          gray: '#1a1a1a',
+          lightgray: '#2a2a2a',
+          blue: '#0073f5',
+          purple: '#6969ff',
+          white: '#ffffff',
+        }
+      },
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['Lexend', 'ui-sans-serif', 'system-ui'],
+        mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(0, 115, 245, 0.2)',
+        'glow-lg': '0 0 30px rgba(0, 115, 245, 0.3)',
+        'glow-purple': '0 0 20px rgba(105, 105, 255, 0.2)',
+        'glow-purple-lg': '0 0 30px rgba(105, 105, 255, 0.3)',
+      },
+      animation: {
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'spin-slow': 'spin 6s linear infinite',
+        'bounce-slow': 'bounce 3s infinite',
+        'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+        'slide-in-left': 'slideInLeft 0.6s ease-in-out forwards',
+        'slide-in-right': 'slideInRight 0.6s ease-in-out forwards',
+        'scale-in': 'scaleIn 0.5s ease-in-out forwards',
+        'bounce-in': 'bounceIn 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards',
+        'rotate-in': 'rotateIn 0.6s ease-in-out forwards',
+        'fade-in': 'fadeIn 0.5s ease-in-out forwards',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        pulseGlow: {
+          '0%, 100%': { boxShadow: '0 0 10px rgba(0, 115, 245, 0.2)' },
+          '50%': { boxShadow: '0 0 20px rgba(0, 115, 245, 0.6), 0 0 30px rgba(0, 115, 245, 0.4)' },
+        },
+        slideInLeft: {
+          from: { transform: 'translateX(-50px)', opacity: '0' },
+          to: { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideInRight: {
+          from: { transform: 'translateX(50px)', opacity: '0' },
+          to: { transform: 'translateX(0)', opacity: '1' },
+        },
+        scaleIn: {
+          from: { transform: 'scale(0.8)', opacity: '0' },
+          to: { transform: 'scale(1)', opacity: '1' },
+        },
+        bounceIn: {
+          '0%': { transform: 'scale(0.3)', opacity: '0' },
+          '20%': { transform: 'scale(1.1)' },
+          '40%': { transform: 'scale(0.9)' },
+          '60%': { transform: 'scale(1.03)', opacity: '1' },
+          '80%': { transform: 'scale(0.97)' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        rotateIn: {
+          from: { transform: 'rotate(-15deg) scale(0.8)', opacity: '0' },
+          to: { transform: 'rotate(0) scale(1)', opacity: '1' },
+        },
+        fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+    },
+  },
+  plugins: [],
+};

@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-xai-black text-white font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-300 focus:outline-none;
+  }
+  
+  .btn-primary {
+    @apply btn bg-xai-blue hover:bg-primary-400 text-white shadow-md hover:shadow-glow;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-xai-purple hover:bg-secondary-400 text-white shadow-md hover:shadow-glow-purple;
+  }
+  
+  .btn-outline {
+    @apply btn bg-transparent border border-xai-lightgray hover:border-xai-blue text-white hover:text-xai-blue;
+  }
+  
+  .card {
+    @apply bg-xai-gray border border-xai-lightgray rounded-md shadow-md hover:shadow-lg transition-all duration-300;
+  }
+  
+  .input {
+    @apply w-full bg-xai-gray border border-xai-lightgray text-white placeholder-dark-400 px-6 py-4 rounded-md focus:outline-none focus:border-xai-blue focus:ring-1 focus:ring-xai-blue transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-primary {
+    @apply text-gradient bg-gradient-to-r from-primary-400 to-primary-600;
+  }
+  
+  .text-gradient-secondary {
+    @apply text-gradient bg-gradient-to-r from-secondary-400 to-secondary-600;
+  }
+  
+  .text-gradient-blue-purple {
+    @apply text-gradient bg-gradient-to-r from-xai-blue via-primary-400 to-xai-purple;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-xai-darkgray;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-xai-lightgray rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-xai-gray;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Enhanced Animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-in-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-in-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-in-out forwards;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+.animate-rotate-in {
+  animation: rotateIn 0.6s ease-in-out forwards;
+}
+
+/* Staggered animations - add delay classes */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+
+/* Hover animations */
+.hover-lift {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(0, 115, 245, 0.5), 0 0 5px rgba(0, 115, 245, 0.3);
+}
+
+/* Additional keyframes */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 115, 245, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(0, 115, 245, 0.6), 0 0 30px rgba(0, 115, 245, 0.4); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  20% { transform: scale(1.1); }
+  40% { transform: scale(0.9); }
+  60% { transform: scale(1.03); opacity: 1; }
+  80% { transform: scale(0.97); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes rotateIn {
+  from { transform: rotate(-15deg) scale(0.8); opacity: 0; }
+  to { transform: rotate(0) scale(1); opacity: 1; }
+}
+
+/* Smooth page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+.hardware-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* XAI-specific styles */
+.xai-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.xai-section {
+  @apply py-16 md:py-24;
+}
+
+.xai-heading {
+  @apply text-3xl md:text-5xl font-bold mb-6 leading-tight;
+}
+
+.xai-subheading {
+  @apply text-xl md:text-2xl text-dark-300 mb-12 max-w-3xl;
+}
+
+.xai-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.xai-card {
+  @apply bg-xai-gray border border-xai-lightgray rounded-md p-6 transition-all duration-300;
+}
+
+.xai-card:hover {
+  @apply border-xai-blue shadow-glow;
+}
+
+.xai-divider {
+  @apply border-t border-xai-lightgray my-16;
+}
