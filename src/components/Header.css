@@ -1,0 +1,159 @@
+/* Header Component - Minimal White Theme */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  border-bottom-color: #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #111827;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.header-logo:hover {
+  color: #374151;
+}
+
+.header-logo-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #6b7280;
+}
+
+.header-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.header-nav-link {
+  color: #6b7280;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 0.5rem 0;
+}
+
+.header-nav-link:hover {
+  color: #111827;
+}
+
+.header-mobile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .header-mobile-button {
+    display: none;
+  }
+}
+
+.header-mobile-button:hover {
+  color: #111827;
+}
+
+.header-mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  display: none;
+}
+
+.header-mobile-menu.open {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .header-mobile-menu {
+    display: none !important;
+  }
+}
+
+.header-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header-mobile-nav-link {
+  color: #6b7280;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  transition: color 0.2s ease;
+}
+
+.header-mobile-nav-link:hover {
+  color: #111827;
+}
+
+.header-mobile-nav-link:last-child {
+  border-bottom: none;
+}
+
+/* Scroll Progress Bar */
+.header-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgba(229, 231, 235, 0.3);
+}
+
+.header-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #000000, #333333);
+  transition: width 0.1s ease-out;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
